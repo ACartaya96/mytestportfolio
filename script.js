@@ -68,3 +68,35 @@ function showSlides(n) {
   slides[slideIndex - 1].style.display = "block";
   if (dots[slideIndex - 1]) dots[slideIndex - 1].classList.add("active");
 }
+
+let ytPlayer;
+
+  // Called by YouTube API when it’s ready (must be global)
+  function onYouTubeIframeAPIReady() {
+    ytPlayer = new YT.Player('yt-player', {
+      playerVars: { rel: 0, playsinline: 1 }
+    });
+
+    const videoSlide = document.getElementById('yt-player').closest('mySlides');
+
+    videoSlide.addEventListener("mouseenter", handlePlayButton, false);
+    videoSlide.addEventListener("mouseleave", handlePlayButton, false);
+
+  async function playVideo() {
+    try {
+      await videoSlide.play();
+      playButton.classList.add("playing");
+    } catch (err) {
+      playButton.classList.remove("playing");
+    }
+  } 
+
+  function handlePlayButton() {
+  if (videoSlide.paused) {
+    playVideo();
+  } else {
+    videoSlide.pause();
+    playButton.classList.remove("playing");
+  }
+  }
+}
