@@ -285,8 +285,6 @@ main {
 
 /* Slideshow container */
 .slideshow-container {
-  display:flex;
-  flex-direction: column;
   position: relative;
   height: 50vh;
   width: 80vh;

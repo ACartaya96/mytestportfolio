@@ -69,7 +69,7 @@ function showSlides(n) {
   if (dots[slideIndex - 1]) dots[slideIndex - 1].classList.add("active");
 }
 
-let ytPlayer;
+/*let ytPlayer;
 
   // Called by YouTube API when it’s ready (must be global)
   function onYouTubeIframeAPIReady() {
@@ -99,4 +99,4 @@ let ytPlayer;
     playButton.classList.remove("playing");
   }
   }
-}
+}*/
