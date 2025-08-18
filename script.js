@@ -31,3 +31,40 @@ function toggleDarkMode() {
   var element = document.body;
   element.classList.toggle("dark-mode");
 }
+
+let slideIndex = 1;
+
+// show the first slide once the DOM is ready
+document.addEventListener("DOMContentLoaded", () => {
+  showSlides(slideIndex);
+});
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  const slides = document.getElementsByClassName("mySlides");
+  const dots   = document.getElementsByClassName("dot");
+  if (slides.length === 0) return;
+
+  if (n > slides.length) { slideIndex = 1; }
+  if (n < 1)             { slideIndex = slides.length; }
+
+  // hide all slides
+  for (let i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  // deactivate all dots
+  for (let i = 0; i < dots.length; i++) {
+    dots[i].classList.remove("active");
+  }
+
+  // show the current slide and activate its dot
+  slides[slideIndex - 1].style.display = "block";
+  if (dots[slideIndex - 1]) dots[slideIndex - 1].classList.add("active");
+}
