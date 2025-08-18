@@ -27,10 +27,14 @@ h2{
 }
 /* Header */
 header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
     background-color: #017371;
     border: var(--parent);
     display:flex;
     flex-direction: row;
+    margin: -8px;
     padding-left: 25px;
     padding-right: 25px;
     justify-content: space-between;
