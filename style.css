@@ -14,10 +14,6 @@ h2{
     margin-left: 25px;
 }
 
-@media (max-width: 100px) {
-  
-}
-
 /* Dark mode */
 .dark-mode {
   background-color: #333333;
@@ -35,8 +31,6 @@ header {
     display:flex;
     flex-direction: row;
     margin: -10px;
-    padding-left: 25px;
-    padding-right: 25px;
     justify-content: space-between;
 }
 
@@ -44,6 +38,7 @@ header {
   display: flex;
   flex-direction: column;
   row-gap: 10px;
+  padding-left: 25px
 }
 
 .header-left .profile{
@@ -154,6 +149,7 @@ header {
   justify-content: center;
   flex-direction: column;
   row-gap: 10px;
+  padding-right: 25px;
 }
 
 .header-right .topdiv {
