@@ -34,7 +34,7 @@ header {
     border: var(--parent);
     display:flex;
     flex-direction: row;
-    margin: -8px;
+    margin: -10px;
     padding-left: 25px;
     padding-right: 25px;
     justify-content: space-between;
