@@ -1,9 +1,10 @@
 /* General Styles */
-body {
-  background-color: whitesmoke;
-  color: #333333;
-  transition: background-color 0.4s, color 0.4s;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+body 
+{
+    background-color: whitesmoke;
+    color: #333333;
+    transition: background-color 0.4s, color 0.4s;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 h2{
@@ -11,6 +12,10 @@ h2{
     font-size: 48px;
     margin-bottom: 10px;
     margin-left: 25px;
+}
+
+@media (max-width: 100px) {
+  
 }
 
 /* Dark mode */
@@ -28,11 +33,10 @@ header {
     flex-direction: row;
     padding-left: 25px;
     padding-right: 25px;
-    justify-content: space-between;;
+    justify-content: space-between;
 }
 
 .header-left {
-  border: var(--child);
   display: flex;
   flex-direction: column;
   row-gap: 10px;
@@ -177,28 +181,29 @@ header {
 main {
     display: flex;
     flex-direction: column;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 24px;
 }
 
 /* About Me Section */
 .about-me {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  column-gap: 20px;
-  padding: 20px;
+  align-items: center;     /* was center */
+  justify-content: space-between; /* was space-between */
+  gap: 32px; 
 }
 .profile-img img {
-  position: sticky;
-  display: flex;
-  justify-content: center;
-   width: 400px;
-  border: 12px outset #017371; 
+  position: static;   /* was sticky */
+  max-width: 400px;
+  border: 12px outset #017371;
   box-shadow: 0 3px 10px gray;
+  flex: 0 0 320px;
 }
 
 .about-me-text {
-  flex: 2;
+  flex-grow: 1 1 0;
   font-size: 20px;
   line-height: 1.6;
 }
@@ -207,6 +212,18 @@ main {
   color: #017371;
   font-size: 36px;
   margin-bottom: 20px;
+}
+
+.about-me-text p { margin: 0 0 1rem; }
+
+/* Responsive: stack image over text on narrow screens */
+@media (max-width: 900px) {
+  .about-me {
+    flex-direction: column;
+    align-items: center;
+    text-align: left; /* keep text left-aligned; change to center if you prefer */
+  }
+  .profile-img { flex: 0 0 auto; }
 }
 
 /* Skills Section*/
@@ -225,7 +242,7 @@ main {
   border-radius: 6px;
   text-align: center;
   margin: 30px;
-  padding: 10px;
+  padding: 5px;
   width: 200px;
   font-size: 20px;
   box-shadow: 0 3px 10px gray;
@@ -263,3 +280,4 @@ main {
   align-items: center;
   justify-content: center;
 }
+
