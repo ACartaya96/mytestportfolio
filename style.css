@@ -9,7 +9,7 @@ body
 
 h2{
     color: #017371;
-    font-size: 48px;
+    font-size: clamp(1.8rem, calc(9vw + 1rem), 5rem);
     margin-bottom: 10px;
     margin-left: 25px;
 }
@@ -208,11 +208,19 @@ main {
   line-height: 1.6;
 }
 
-.about-me-text h1 {
+.about-me-text h1{
   color: #017371;
-  font-size: 36px;
+  font-size: clamp(1rem, calc(2.5vw + 1rem), 5rem);
   margin-bottom: 20px;
+  text-align: center;
 }
+
+.about-me-text img {
+  width: 4vh;
+  height: 4vh;
+  vertical-align: middle;
+}
+
 
 .about-me-text p { margin: 0 0 1rem; }
 
@@ -221,7 +229,7 @@ main {
   .about-me {
     flex-direction: column;
     align-items: center;
-    text-align: left; /* keep text left-aligned; change to center if you prefer */
+    text-align: center; /* keep text left-aligned; change to center if you prefer */
   }
   .profile-img { flex: 0 0 auto; }
 }
@@ -290,8 +298,10 @@ main {
   width: 80vh;
   border: 12px outset #017371;
   box-shadow: 0 3px 10px gray;
-  margin-left: 15vh;
-  margin-bottom: 3vh;
+  margin: 0 auto;
+  overflow: hidden;;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;;
   transition: transform 0.3s ease-in-out;
 }
 
@@ -303,9 +313,13 @@ main {
   position: absolute;
   top: 0;
   left: 0;  
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
   width: 100%; 
   height: 100%; 
 }
+
+
 
 .slideshow-container img {
   z-index: 1;
